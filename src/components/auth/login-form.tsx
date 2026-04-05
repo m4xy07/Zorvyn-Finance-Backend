@@ -94,10 +94,6 @@ export function LoginForm() {
           "Sign in"
         )}
       </Button>
-
-      <p className="mt-4 text-xs text-slate-500">
-        Demo users are seeded via `npm run seed` and managed by admin-only controls.
-      </p>
     </motion.form>
   );
 }

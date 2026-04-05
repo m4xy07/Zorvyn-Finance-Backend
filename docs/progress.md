@@ -47,6 +47,21 @@
 - No known blockers for core assignment scope.
 - Optional future enhancement (not required for v1): add automated integration tests for API routes and service-level aggregations.
 
+## Dashboard Enhancements (Post-v1)
+- Added financial health scoring to `/api/dashboard/summary`:
+  - score + grade
+  - savings rate
+  - burn ratio
+  - expense momentum and concentration signals
+- Added smart insight feed generated from live metrics.
+- Added anomaly detection for unusual expense records based on historical category baselines.
+- Added 3-month projected balance forecast with confidence signal based on historical monthly net volatility.
+- Integrated new UI panels:
+  - Health Score card
+  - Forecast chart
+  - Smart Insights card
+  - Anomaly Watch list
+
 ## Assumptions
 - MongoDB available via `MONGODB_URI`.
 - User lifecycle uses deactivation (`inactive`) rather than hard delete.

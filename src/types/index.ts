@@ -60,6 +60,36 @@ export interface DashboardSummary {
     expense: number;
     netBalance: number;
   };
+  healthScore: {
+    score: number;
+    grade: "A" | "B" | "C" | "D";
+    savingsRate: number;
+    burnRate: number;
+    expenseChangePct: number;
+    topExpenseCategoryShare: number;
+  };
+  insights: Array<{
+    title: string;
+    value: string;
+    tone: "positive" | "neutral" | "warning";
+  }>;
+  forecast: {
+    averageMonthlyNet: number;
+    confidence: "high" | "medium" | "low";
+    projectedBalances: Array<{
+      label: string;
+      projectedBalance: number;
+    }>;
+  };
+  anomalies: Array<{
+    id: string;
+    date: string;
+    category: string;
+    amount: number;
+    expected: number;
+    deviationPct: number;
+    notes: string;
+  }>;
   categoryTotals: Array<{
     category: string;
     income: number;

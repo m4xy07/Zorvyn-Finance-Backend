@@ -4,7 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
 
+import { AnomalyList } from "@/components/dashboard/anomaly-list";
 import { CategoryChart } from "@/components/dashboard/category-chart";
+import { ForecastChart } from "@/components/dashboard/forecast-chart";
+import { HealthScoreCard } from "@/components/dashboard/health-score-card";
+import { InsightFeed } from "@/components/dashboard/insight-feed";
 import { RecentActivityTable } from "@/components/dashboard/recent-activity-table";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { TrendChart } from "@/components/dashboard/trend-chart";
@@ -117,6 +121,21 @@ export function DashboardOverview({ role }: DashboardOverviewProps) {
       </div>
 
       <div className="grid gap-4 xl:grid-cols-3">
+        <HealthScoreCard
+          score={summary.healthScore.score}
+          grade={summary.healthScore.grade}
+          savingsRate={summary.healthScore.savingsRate}
+          burnRate={summary.healthScore.burnRate}
+        />
+        <ForecastChart
+          averageMonthlyNet={summary.forecast.averageMonthlyNet}
+          confidence={summary.forecast.confidence}
+          data={summary.forecast.projectedBalances}
+        />
+        <InsightFeed insights={summary.insights} />
+      </div>
+
+      <div className="grid gap-4 xl:grid-cols-3">
         <div className="space-y-4 xl:col-span-2">
           <div className="flex items-center justify-between rounded-2xl border border-indigo-400/20 bg-slate-900/60 p-3">
             <div className="inline-flex gap-2">
@@ -164,6 +183,8 @@ export function DashboardOverview({ role }: DashboardOverviewProps) {
               )}
             </div>
           </Card>
+
+          <AnomalyList anomalies={summary.anomalies} />
         </div>
       </div>
     </div>
