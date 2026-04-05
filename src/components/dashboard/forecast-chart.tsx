@@ -17,47 +17,52 @@ interface ForecastChartProps {
 
 function confidenceTone(confidence: ForecastChartProps["confidence"]): string {
   if (confidence === "high") {
-    return "text-[#117a4c]";
+    return "text-[var(--accent)]";
   }
 
   if (confidence === "medium") {
-    return "text-[#2a60ac]";
+    return "text-[var(--info)]";
   }
 
-  return "text-[#a46410]";
+  return "text-[var(--warning)]";
 }
 
 export function ForecastChart({ averageMonthlyNet, confidence, data }: ForecastChartProps) {
   return (
-    <Card className="h-[240px]">
+    <Card className="h-[250px]">
       <div className="mb-2 flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-[#1f241b]">3-Month Forecast</h3>
+        <h3 className="text-sm font-semibold text-[var(--text)]">3-Month Forecast</h3>
         <p className={`text-xs capitalize ${confidenceTone(confidence)}`}>{confidence} confidence</p>
       </div>
 
-      <p className="mb-2 text-xs text-[#727a69]">
+      <p className="mb-2 text-xs text-[var(--muted)]">
         Avg monthly net: {averageMonthlyNet >= 0 ? "+" : ""}
         {averageMonthlyNet.toFixed(0)}
       </p>
 
       <ResponsiveContainer width="100%" height="74%">
         <AreaChart data={data}>
-          <XAxis dataKey="label" tick={{ fill: "#78806f", fontSize: 12 }} axisLine={false} tickLine={false} />
-          <YAxis tick={{ fill: "#78806f", fontSize: 12 }} axisLine={false} tickLine={false} />
+          <XAxis
+            dataKey="label"
+            tick={{ fill: "var(--muted)", fontSize: 11 }}
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis tick={{ fill: "var(--muted)", fontSize: 11 }} axisLine={false} tickLine={false} />
           <Tooltip
             contentStyle={{
-              backgroundColor: "#ffffff",
-              border: "1px solid #dde1d6",
-              borderRadius: 14,
-              color: "#1e2418",
+              backgroundColor: "var(--surface)",
+              border: "1px solid var(--border-strong)",
+              borderRadius: 12,
+              color: "var(--text)",
             }}
           />
           <Area
             type="monotone"
             dataKey="projectedBalance"
-            stroke="#2a60ac"
-            fill="rgba(42,96,172,0.15)"
-            strokeWidth={2.3}
+            stroke="var(--chart-net)"
+            fill="color-mix(in_srgb,var(--chart-net),transparent 82%)"
+            strokeWidth={2.2}
           />
         </AreaChart>
       </ResponsiveContainer>

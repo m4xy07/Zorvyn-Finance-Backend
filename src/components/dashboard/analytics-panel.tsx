@@ -87,7 +87,7 @@ export function AnalyticsPanel() {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border)] bg-white p-3 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3">
         <div className="inline-flex gap-2">
           <Button variant={period === "monthly" ? "primary" : "secondary"} onClick={() => setPeriod("monthly")}>
             Monthly Trends
@@ -109,15 +109,18 @@ export function AnalyticsPanel() {
       </div>
 
       <Card>
-        <h3 className="mb-4 text-sm font-semibold text-[#1f241b]">Category Performance</h3>
+        <h3 className="mb-4 text-sm font-semibold text-[var(--text)]">Category Performance</h3>
         <div className="space-y-2 text-sm">
           {categories.length === 0 ? (
-            <p className="text-[#727a69]">No category analytics available.</p>
+            <p className="text-[var(--muted)]">No category analytics available.</p>
           ) : (
             categories.map((item) => (
-              <div key={item.category} className="flex items-center justify-between border-b border-[#ecefe7] py-2">
-                <span className="text-[#4e5648]">{item.category}</span>
-                <span className="font-medium text-[#2a60ac]">${item.totalVolume.toLocaleString()}</span>
+              <div
+                key={item.category}
+                className="flex items-center justify-between border-b border-[var(--border)] py-2"
+              >
+                <span className="text-[var(--text)]">{item.category}</span>
+                <span className="font-medium text-[var(--info)]">${item.totalVolume.toLocaleString()}</span>
               </div>
             ))
           )}

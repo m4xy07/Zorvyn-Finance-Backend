@@ -15,7 +15,7 @@ export function MobileNav({ user }: MobileNavProps) {
   const pathname = usePathname();
 
   return (
-    <nav className="mt-3 grid grid-cols-2 gap-2 lg:hidden">
+    <nav className="mt-3 grid grid-cols-2 gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-2 lg:hidden">
       {dashboardNavItems
         .filter((item) => !item.adminOnly || user.role === "admin")
         .map((item) => {
@@ -26,10 +26,10 @@ export function MobileNav({ user }: MobileNavProps) {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-xl border px-3 py-2 text-center text-xs font-medium",
+                "rounded-lg border px-3 py-2 text-center text-xs font-medium",
                 active
-                  ? "border-[#c7d8ef] bg-[#e9f0fb] text-[#285ea9]"
-                  : "border-[var(--border)] bg-white text-[#545d4c]",
+                  ? "border-[color:color-mix(in_srgb,var(--accent),black_30%)] bg-[var(--accent-soft)] text-[color:color-mix(in_srgb,var(--accent),white_16%)]"
+                  : "border-transparent bg-[var(--surface)] text-[var(--muted)]",
               )}
             >
               {item.label}

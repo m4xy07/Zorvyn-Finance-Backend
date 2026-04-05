@@ -11,13 +11,13 @@ export function RecentActivityTable({ records }: RecentActivityTableProps) {
   return (
     <Card>
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-[#1f241b]">Recent Activity</h3>
+        <h3 className="text-sm font-semibold text-[var(--text)]">Recent Activity</h3>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="data-table w-full text-sm">
           <thead>
-            <tr className="border-b border-[#e6e9df] text-left text-xs uppercase tracking-[0.12em] text-[#727969]">
+            <tr className="text-left">
               <th className="py-2">Date</th>
               <th className="py-2">Category</th>
               <th className="py-2">Type</th>
@@ -27,13 +27,16 @@ export function RecentActivityTable({ records }: RecentActivityTableProps) {
           <tbody>
             {records.length === 0 ? (
               <tr>
-                <td colSpan={4} className="py-6 text-center text-[#747d6d]">
+                <td colSpan={4} className="py-6 text-center text-[var(--muted)]">
                   No recent records found.
                 </td>
               </tr>
             ) : (
               records.map((record) => (
-                <tr key={record.id} className="border-b border-[#eef1e8] text-[#293022]">
+                <tr
+                  key={record.id}
+                  className="text-[var(--text)] transition-colors hover:bg-[color:color-mix(in_srgb,var(--surface-muted),transparent_55%)]"
+                >
                   <td className="py-3">{formatDate(record.date)}</td>
                   <td className="py-3">{record.category}</td>
                   <td className="py-3">

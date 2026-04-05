@@ -65,13 +65,13 @@
 ## Full UI Rework (Current)
 - Rebuilt visual design system from scratch:
   - new typography pair
-  - new neutral premium palette
+  - premium near-black + emerald accent palette with light-mode counterpart
   - redesigned card, button, input, badge, modal primitives
 - Reworked dashboard shell/navigation:
-  - sidebar
-  - top header
-  - mobile nav
-  - spacing/border language
+  - new framed app container and content stage
+  - denser sidebar grouping and stronger active-state hierarchy
+  - command-style top bar with integrated theme control
+  - refreshed mobile nav treatment
 - Restyled all major product surfaces to match one cohesive product aesthetic:
   - login/auth view
   - dashboard overview
@@ -79,6 +79,7 @@
   - records filters/table/forms/detail/edit
   - users management table/forms
   - not-found and error states
+- Added dark/light theme toggle with persisted preference and theme-aware chart colors.
 
 ## Assumptions
 - MongoDB available via `MONGODB_URI`.

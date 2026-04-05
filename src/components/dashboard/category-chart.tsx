@@ -15,23 +15,30 @@ interface CategoryChartProps {
   data: CategoryDatum[];
 }
 
-const COLORS = ["#2a60ac", "#1a8e5a", "#d67830", "#5574a6", "#8a60ca", "#cc5145"];
+const COLORS = [
+  "var(--chart-income)",
+  "var(--chart-net)",
+  "var(--warning)",
+  "var(--accent-strong)",
+  "color-mix(in_srgb,var(--chart-net),var(--accent) 30%)",
+  "var(--chart-expense)",
+];
 
 export function CategoryChart({ data }: CategoryChartProps) {
   return (
-    <Card className="h-[380px]">
-      <h3 className="text-sm font-semibold text-[#1f241b]">Category Distribution</h3>
-      <p className="mt-1 text-xs text-[#6f7768]">Spending and earning mix across categories</p>
+    <Card className="h-[300px]">
+      <h3 className="text-sm font-semibold text-[var(--text)]">Category Split</h3>
+      <p className="mt-1 text-xs text-[var(--muted)]">Volume distribution</p>
 
-      <div className="mt-4 h-[84%]">
+      <div className="mt-3 h-[82%]">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
               data={data}
               cx="50%"
               cy="50%"
-              innerRadius={66}
-              outerRadius={116}
+              innerRadius={58}
+              outerRadius={100}
               dataKey="totalVolume"
               nameKey="category"
               paddingAngle={2}
@@ -42,10 +49,10 @@ export function CategoryChart({ data }: CategoryChartProps) {
             </Pie>
             <Tooltip
               contentStyle={{
-                backgroundColor: "#ffffff",
-                border: "1px solid #dde1d6",
-                borderRadius: 14,
-                color: "#1e2418",
+                backgroundColor: "var(--surface)",
+                border: "1px solid var(--border-strong)",
+                borderRadius: 12,
+                color: "var(--text)",
               }}
             />
           </PieChart>

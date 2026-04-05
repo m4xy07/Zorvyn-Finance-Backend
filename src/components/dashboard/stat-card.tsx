@@ -8,9 +8,9 @@ interface StatCardProps {
 }
 
 const toneStyles: Record<NonNullable<StatCardProps["tone"]>, string> = {
-  income: "text-[#117a4c]",
-  expense: "text-[#b13f3f]",
-  neutral: "text-[#264f89]",
+  income: "text-[var(--accent)]",
+  expense: "text-[var(--danger)]",
+  neutral: "text-[var(--info)]",
 };
 
 export function StatCard({ label, value, tone = "neutral" }: StatCardProps) {

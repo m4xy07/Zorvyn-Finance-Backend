@@ -15,21 +15,25 @@ interface DashboardShellProps {
 
 export function DashboardShell({ user, children }: DashboardShellProps) {
   return (
-    <div className="relative flex min-h-screen bg-transparent text-[var(--text)]">
-      <AppSidebar user={user} />
+    <div className="min-h-screen p-2 sm:p-4 lg:p-5">
+      <div className="app-shell mx-auto max-w-[1550px] overflow-hidden rounded-[30px]">
+        <div className="flex min-h-[calc(100vh-1rem)]">
+          <AppSidebar user={user} />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-[1400px] flex-1 flex-col p-4 sm:p-6">
-        <TopBar user={user} />
-        <MobileNav user={user} />
+          <div className="flex min-h-screen flex-1 flex-col p-3 sm:p-5 lg:p-6">
+            <TopBar user={user} />
+            <MobileNav user={user} />
 
-        <motion.main
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.28, ease: "easeOut" }}
-          className="mt-4 flex-1"
-        >
-          {children}
-        </motion.main>
+            <motion.main
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+              className="mt-4 flex-1 rounded-2xl border border-[var(--border)] bg-[color:color-mix(in_srgb,var(--surface),black_8%)] p-4 sm:p-5"
+            >
+              {children}
+            </motion.main>
+          </div>
+        </div>
       </div>
     </div>
   );

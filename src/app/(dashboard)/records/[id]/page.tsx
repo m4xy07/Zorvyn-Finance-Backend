@@ -46,24 +46,24 @@ export default async function RecordDetailPage({ params }: PageProps) {
 
       <Card className="space-y-4 p-5">
         <div className="flex items-center justify-between">
-          <p className="text-sm text-[#5c6456]">Type</p>
+          <p className="text-sm text-[var(--muted)]">Type</p>
           <Badge variant={record.type === "income" ? "success" : "danger"}>{record.type}</Badge>
         </div>
-        <div className="flex items-center justify-between border-t border-[#ecefe7] pt-3">
-          <p className="text-sm text-[#5c6456]">Category</p>
-          <p className="font-medium text-[#20261a]">{record.category}</p>
+        <div className="flex items-center justify-between border-t border-[var(--border)] pt-3">
+          <p className="text-sm text-[var(--muted)]">Category</p>
+          <p className="font-medium text-[var(--text)]">{record.category}</p>
         </div>
-        <div className="flex items-center justify-between border-t border-[#ecefe7] pt-3">
-          <p className="text-sm text-[#5c6456]">Amount</p>
-          <p className="font-semibold text-[#2a60ac]">{formatCurrency(record.amount)}</p>
+        <div className="flex items-center justify-between border-t border-[var(--border)] pt-3">
+          <p className="text-sm text-[var(--muted)]">Amount</p>
+          <p className="font-semibold text-[var(--info)]">{formatCurrency(record.amount)}</p>
         </div>
-        <div className="flex items-center justify-between border-t border-[#ecefe7] pt-3">
-          <p className="text-sm text-[#5c6456]">Date</p>
-          <p className="text-[#20261a]">{formatDate(record.date)}</p>
+        <div className="flex items-center justify-between border-t border-[var(--border)] pt-3">
+          <p className="text-sm text-[var(--muted)]">Date</p>
+          <p className="text-[var(--text)]">{formatDate(record.date)}</p>
         </div>
-        <div className="border-t border-[#ecefe7] pt-3">
-          <p className="mb-2 text-sm text-[#5c6456]">Notes</p>
-          <p className="rounded-xl border border-[#ecefe7] bg-[#f7f8f4] p-3 text-sm text-[#2f3728]">
+        <div className="border-t border-[var(--border)] pt-3">
+          <p className="mb-2 text-sm text-[var(--muted)]">Notes</p>
+          <p className="rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-sm text-[var(--text)]">
             {record.notes || "-"}
           </p>
         </div>

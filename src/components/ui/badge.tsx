@@ -9,11 +9,11 @@ interface BadgeProps {
 }
 
 const variantStyles = {
-  neutral: "bg-[#f0f2ec] text-[#4e5648] border-[#dde1d6]",
-  success: "bg-[#e7f6ee] text-[#137748] border-[#bde6cf]",
-  warning: "bg-[#fff3df] text-[#94611a] border-[#f0d4a2]",
-  danger: "bg-[#fff0f0] text-[#9e3737] border-[#efb5b5]",
-  info: "bg-[#ebf2fd] text-[#2d5a95] border-[#c8d9f5]",
+  neutral: "bg-[color:color-mix(in_srgb,var(--surface-muted),black_6%)] text-[var(--muted)] border-[var(--border)]",
+  success: "bg-[var(--success-soft)] text-[color:color-mix(in_srgb,var(--accent),white_8%)] border-[color:color-mix(in_srgb,var(--accent),black_48%)]",
+  warning: "bg-[var(--warning-soft)] text-[color:color-mix(in_srgb,var(--warning),white_8%)] border-[color:color-mix(in_srgb,var(--warning),black_42%)]",
+  danger: "bg-[var(--danger-soft)] text-[color:color-mix(in_srgb,var(--danger),white_8%)] border-[color:color-mix(in_srgb,var(--danger),black_45%)]",
+  info: "bg-[var(--info-soft)] text-[var(--info)] border-[color:color-mix(in_srgb,var(--info),black_44%)]",
 };
 
 export function Badge({ children, variant = "neutral", className }: BadgeProps) {

@@ -96,10 +96,12 @@ export function RecordForm({ mode, recordId, initialValues }: RecordFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[var(--border)] bg-white p-5 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
+    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <div className="grid gap-4 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Amount</label>
+          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
+            Amount
+          </label>
           <Input
             value={values.amount}
             onChange={(event) => setValues((prev) => ({ ...prev, amount: event.target.value }))}
@@ -112,7 +114,9 @@ export function RecordForm({ mode, recordId, initialValues }: RecordFormProps) {
         </div>
 
         <div>
-          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Type</label>
+          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
+            Type
+          </label>
           <Select
             value={values.type}
             onChange={(event) =>
@@ -130,7 +134,9 @@ export function RecordForm({ mode, recordId, initialValues }: RecordFormProps) {
 
       <div className="grid gap-4 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Category</label>
+          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
+            Category
+          </label>
           <Input
             list="categories"
             value={values.category}
@@ -146,7 +152,9 @@ export function RecordForm({ mode, recordId, initialValues }: RecordFormProps) {
         </div>
 
         <div>
-          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Date</label>
+          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
+            Date
+          </label>
           <Input
             type="date"
             value={values.date}
@@ -157,7 +165,9 @@ export function RecordForm({ mode, recordId, initialValues }: RecordFormProps) {
       </div>
 
       <div>
-        <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Notes</label>
+        <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
+          Notes
+        </label>
         <Textarea
           value={values.notes}
           onChange={(event) => setValues((prev) => ({ ...prev, notes: event.target.value }))}

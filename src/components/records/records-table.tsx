@@ -51,10 +51,10 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
 
   return (
     <>
-      <div className="overflow-x-auto rounded-2xl border border-[var(--border)] bg-white shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
-        <table className="w-full min-w-[760px] text-sm">
+      <div className="overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+        <table className="data-table w-full min-w-[760px] text-sm">
           <thead>
-            <tr className="border-b border-[#e8ebdf] text-left text-xs uppercase tracking-[0.12em] text-[#747d6e]">
+            <tr className="text-left">
               <th className="px-4 py-3">Date</th>
               <th className="px-4 py-3">Category</th>
               <th className="px-4 py-3">Type</th>
@@ -66,13 +66,16 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
           <tbody>
             {records.length === 0 ? (
               <tr>
-                <td colSpan={6} className="px-4 py-10 text-center text-[#798272]">
+                <td colSpan={6} className="px-4 py-10 text-center text-[var(--muted)]">
                   No records found for the current filters.
                 </td>
               </tr>
             ) : (
               records.map((record) => (
-                <tr key={record.id} className="border-b border-[#edf0e8] text-[#262d21]">
+                <tr
+                  key={record.id}
+                  className="text-[var(--text)] transition-colors hover:bg-[color:color-mix(in_srgb,var(--surface-muted),transparent_55%)]"
+                >
                   <td className="px-4 py-3">{formatDate(record.date)}</td>
                   <td className="px-4 py-3">{record.category}</td>
                   <td className="px-4 py-3">
@@ -81,7 +84,7 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
                     </Badge>
                   </td>
                   <td className="px-4 py-3 text-right font-semibold">{formatCurrency(record.amount)}</td>
-                  <td className="max-w-[260px] truncate px-4 py-3 text-[#5d6557]">{record.notes || "-"}</td>
+                  <td className="max-w-[260px] truncate px-4 py-3 text-[var(--muted)]">{record.notes || "-"}</td>
                   <td className="px-4 py-3 text-right">
                     <div className="inline-flex gap-2">
                       <Link href={`/records/${record.id}`}>

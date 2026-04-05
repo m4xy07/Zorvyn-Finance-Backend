@@ -57,8 +57,10 @@ export function UserForm({ selectedUser, loading, onSubmit, onCancelEdit }: User
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[var(--border)] bg-white p-4 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
-      <h3 className="text-sm font-semibold text-[#1f241b]">{isEditMode ? "Edit User" : "Create User"}</h3>
+    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4">
+      <h3 className="text-sm font-semibold text-[var(--text)]">
+        {isEditMode ? "Edit User" : "Create User"}
+      </h3>
 
       <div className="grid gap-3 md:grid-cols-2">
         <Input

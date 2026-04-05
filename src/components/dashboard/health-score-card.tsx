@@ -9,18 +9,18 @@ interface HealthScoreCardProps {
 
 function scoreTone(score: number): string {
   if (score >= 85) {
-    return "text-[#117a4c]";
+    return "text-[var(--accent)]";
   }
 
   if (score >= 70) {
-    return "text-[#2a60ac]";
+    return "text-[var(--info)]";
   }
 
   if (score >= 55) {
-    return "text-[#b06812]";
+    return "text-[var(--warning)]";
   }
 
-  return "text-[#b13f3f]";
+  return "text-[var(--danger)]";
 }
 
 export function HealthScoreCard({ score, grade, savingsRate, burnRate }: HealthScoreCardProps) {
@@ -31,23 +31,23 @@ export function HealthScoreCard({ score, grade, savingsRate, burnRate }: HealthS
       <p className="eyebrow">Financial Health</p>
       <div className="mt-3 flex items-end justify-between">
         <p className={`text-3xl font-bold ${scoreTone(score)}`}>{score}</p>
-        <p className="rounded-lg bg-[#eef3fc] px-2.5 py-1 text-xs font-semibold text-[#2a60ac]">
+        <p className="rounded-lg border border-[var(--border)] bg-[var(--success-soft)] px-2.5 py-1 text-xs font-semibold text-[var(--accent)]">
           Grade {grade}
         </p>
       </div>
 
-      <div className="mt-3 h-2 rounded-full bg-[#ecefe6]">
-        <div className="h-2 rounded-full bg-[#2a60ac]" style={{ width }} />
+      <div className="mt-3 h-2 rounded-full bg-[var(--surface-muted)]">
+        <div className="h-2 rounded-full bg-[var(--accent)]" style={{ width }} />
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2 text-xs">
-        <div className="rounded-lg bg-[#f7f8f4] p-2.5">
-          <p className="text-[#727969]">Savings rate</p>
-          <p className="mt-1 font-semibold text-[#1f2619]">{(savingsRate * 100).toFixed(1)}%</p>
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-2.5">
+          <p className="text-[var(--muted)]">Savings rate</p>
+          <p className="mt-1 font-semibold text-[var(--text)]">{(savingsRate * 100).toFixed(1)}%</p>
         </div>
-        <div className="rounded-lg bg-[#f7f8f4] p-2.5">
-          <p className="text-[#727969]">Burn ratio</p>
-          <p className="mt-1 font-semibold text-[#1f2619]">{burnRate.toFixed(2)}x</p>
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-2.5">
+          <p className="text-[var(--muted)]">Burn ratio</p>
+          <p className="mt-1 font-semibold text-[var(--text)]">{burnRate.toFixed(2)}x</p>
         </div>
       </div>
     </Card>

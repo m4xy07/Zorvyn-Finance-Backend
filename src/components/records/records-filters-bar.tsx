@@ -32,8 +32,15 @@ export function RecordsFiltersBar({ value, onChange, onReset }: RecordsFiltersBa
     };
 
   return (
-    <div className="rounded-2xl border border-[var(--border)] bg-white p-4 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+    <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <p className="eyebrow">Filters</p>
+        <Button variant="ghost" onClick={onReset} className="h-8 px-3 text-xs">
+          Reset
+        </Button>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         <Input placeholder="Search category or notes" value={value.search} onChange={updateField("search")} />
 
         <Select value={value.type} onChange={updateField("type")}>
@@ -58,10 +65,6 @@ export function RecordsFiltersBar({ value, onChange, onReset }: RecordsFiltersBa
           <option value="desc">Desc</option>
           <option value="asc">Asc</option>
         </Select>
-
-        <Button variant="ghost" onClick={onReset}>
-          Reset
-        </Button>
       </div>
     </div>
   );

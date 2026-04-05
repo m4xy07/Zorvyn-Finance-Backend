@@ -162,8 +162,8 @@ export function UsersPageClient() {
           <UsersTable users={data.items} onEdit={setSelectedUser} onToggleStatus={handleToggleStatus} />
 
           <Card className="flex flex-wrap items-center justify-between gap-3 py-3">
-            <p className="text-xs text-[#757d6e]">
-              Page {data.page} of {data.totalPages} � {data.total} users
+            <p className="text-xs text-[var(--muted)]">
+              Page {data.page} of {data.totalPages} - {data.total} users
             </p>
             <div className="flex gap-2">
               <Button
@@ -185,7 +185,7 @@ export function UsersPageClient() {
         </>
       ) : (
         <Card>
-          <p className="text-sm text-[#af4343]">Unable to load users.</p>
+          <p className="text-sm text-[var(--danger)]">Unable to load users.</p>
         </Card>
       )}
     </div>
