@@ -34,14 +34,16 @@ export function TopBar({ user }: TopBarProps) {
   };
 
   return (
-    <header className="flex items-center justify-between rounded-2xl border border-indigo-400/15 bg-slate-900/50 px-4 py-3">
+    <header className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border)] bg-white px-4 py-3 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
       <div>
-        <h1 className="text-base font-semibold text-slate-100">Finance Dashboard</h1>
-        <p className="text-xs text-slate-400">Operational insights and financial records</p>
+        <p className="eyebrow">Overview</p>
+        <h1 className="mt-1 text-base font-semibold text-[#1d2218]">Finance Workspace</h1>
       </div>
 
-      <div className="flex items-center gap-3">
-        <Badge variant="info">{user.role}</Badge>
+      <div className="flex items-center gap-2">
+        <Badge variant="info" className="capitalize">
+          {user.role}
+        </Badge>
         <Button variant="secondary" className="gap-2" onClick={handleLogout}>
           <LogOut className="h-4 w-4" />
           Logout
@@ -50,4 +52,3 @@ export function TopBar({ user }: TopBarProps) {
     </header>
   );
 }
-

@@ -13,13 +13,11 @@ export default async function AnalyticsPage() {
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-xl font-semibold text-slate-100">Analytics</h2>
-        <p className="text-sm text-slate-400">
-          Deeper trend and category insights for analyst and admin roles.
-        </p>
+        <p className="eyebrow">Insights</p>
+        <h2 className="page-title">Analytics</h2>
+        <p className="page-subtitle">Deeper trend and category insights for analyst and admin roles.</p>
       </div>
       <AnalyticsPanel />
     </div>
   );
 }
-

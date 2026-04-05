@@ -12,11 +12,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-indigo-500 text-white shadow-[0_8px_30px_rgba(79,70,229,0.35)] hover:bg-indigo-400 disabled:bg-indigo-800",
+    "border border-[#0f172a] bg-[#111827] text-white hover:bg-[#1f2937] shadow-[0_1px_2px_rgba(15,23,42,0.18)]",
   secondary:
-    "bg-slate-800 text-slate-100 border border-slate-700 hover:bg-slate-700",
-  ghost: "bg-transparent text-slate-200 hover:bg-slate-800",
-  danger: "bg-rose-600 text-white hover:bg-rose-500",
+    "border border-[var(--border)] bg-white text-[#1e2418] hover:bg-[#f6f7f3] shadow-[0_1px_0_rgba(17,24,39,0.04)]",
+  ghost: "border border-transparent bg-transparent text-[#4c5345] hover:bg-[#eef1e8]",
+  danger: "border border-[#ef9a9a] bg-[#fff6f6] text-[#912e2e] hover:bg-[#ffeded]",
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -26,7 +26,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type={type}
         className={cn(
-          "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60",
+          "inline-flex h-10 items-center justify-center rounded-xl px-4 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7ea8df] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f6ef] disabled:cursor-not-allowed disabled:opacity-55",
           variantStyles[variant],
           className,
         )}
@@ -37,4 +37,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
-

@@ -13,11 +13,11 @@ export default async function NewRecordPage() {
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-xl font-semibold text-slate-100">Create Record</h2>
-        <p className="text-sm text-slate-400">Add a new income or expense transaction.</p>
+        <p className="eyebrow">Create</p>
+        <h2 className="page-title">New Record</h2>
+        <p className="page-subtitle">Add a new income or expense transaction.</p>
       </div>
       <RecordForm mode="create" />
     </div>
   );
 }
-

@@ -125,10 +125,11 @@ export function UsersPageClient() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-end justify-between gap-3">
+      <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-xl font-semibold text-slate-100">User Management</h2>
-          <p className="text-sm text-slate-400">Create users, assign roles, and control account status.</p>
+          <p className="eyebrow">Admin</p>
+          <h2 className="page-title">User Management</h2>
+          <p className="page-subtitle">Create users, assign roles, and control account status.</p>
         </div>
 
         <div className="flex gap-2">
@@ -160,9 +161,9 @@ export function UsersPageClient() {
         <>
           <UsersTable users={data.items} onEdit={setSelectedUser} onToggleStatus={handleToggleStatus} />
 
-          <Card className="flex items-center justify-between py-3">
-            <p className="text-xs text-slate-400">
-              Page {data.page} of {data.totalPages} • {data.total} users
+          <Card className="flex flex-wrap items-center justify-between gap-3 py-3">
+            <p className="text-xs text-[#757d6e]">
+              Page {data.page} of {data.totalPages} � {data.total} users
             </p>
             <div className="flex gap-2">
               <Button
@@ -184,11 +185,9 @@ export function UsersPageClient() {
         </>
       ) : (
         <Card>
-          <p className="text-sm text-rose-300">Unable to load users.</p>
+          <p className="text-sm text-[#af4343]">Unable to load users.</p>
         </Card>
       )}
     </div>
   );
 }
-
-

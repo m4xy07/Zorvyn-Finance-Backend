@@ -28,8 +28,8 @@ export function MobileNav({ user }: MobileNavProps) {
               className={cn(
                 "rounded-xl border px-3 py-2 text-center text-xs font-medium",
                 active
-                  ? "border-indigo-400/50 bg-indigo-500/20 text-indigo-100"
-                  : "border-slate-800 bg-slate-900/70 text-slate-300",
+                  ? "border-[#c7d8ef] bg-[#e9f0fb] text-[#285ea9]"
+                  : "border-[var(--border)] bg-white text-[#545d4c]",
               )}
             >
               {item.label}
@@ -39,4 +39,3 @@ export function MobileNav({ user }: MobileNavProps) {
     </nav>
   );
 }
-

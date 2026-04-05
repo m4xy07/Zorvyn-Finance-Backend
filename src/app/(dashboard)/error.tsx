@@ -16,13 +16,12 @@ export default function DashboardError({
   }, [error]);
 
   return (
-    <div className="rounded-2xl border border-rose-500/30 bg-rose-900/10 p-5">
-      <h2 className="text-lg font-semibold text-rose-200">Something went wrong</h2>
-      <p className="mt-2 text-sm text-rose-100/80">{error.message || "Unexpected error"}</p>
+    <div className="rounded-2xl border border-[#efb6b6] bg-[#fff4f4] p-5">
+      <h2 className="text-lg font-semibold text-[#9e3737]">Something went wrong</h2>
+      <p className="mt-2 text-sm text-[#8f4b4b]">{error.message || "Unexpected error"}</p>
       <Button className="mt-4" onClick={() => reset()}>
         Try again
       </Button>
     </div>
   );
 }
-

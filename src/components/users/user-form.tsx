@@ -57,10 +57,8 @@ export function UserForm({ selectedUser, loading, onSubmit, onCancelEdit }: User
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-indigo-400/20 bg-slate-900/60 p-4">
-      <h3 className="text-sm font-semibold text-slate-100">
-        {isEditMode ? "Edit User" : "Create User"}
-      </h3>
+    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[var(--border)] bg-white p-4 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
+      <h3 className="text-sm font-semibold text-[#1f241b]">{isEditMode ? "Edit User" : "Create User"}</h3>
 
       <div className="grid gap-3 md:grid-cols-2">
         <Input
@@ -111,7 +109,7 @@ export function UserForm({ selectedUser, loading, onSubmit, onCancelEdit }: User
 
       <div className="flex justify-end gap-2">
         {isEditMode ? (
-          <Button variant="secondary" onClick={onCancelEdit}>
+          <Button variant="ghost" onClick={onCancelEdit}>
             Cancel
           </Button>
         ) : null}
@@ -122,4 +120,3 @@ export function UserForm({ selectedUser, loading, onSubmit, onCancelEdit }: User
     </form>
   );
 }
-

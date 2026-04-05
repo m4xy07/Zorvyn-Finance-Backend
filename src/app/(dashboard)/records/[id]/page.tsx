@@ -26,10 +26,11 @@ export default async function RecordDetailPage({ params }: PageProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-xl font-semibold text-slate-100">Record Detail</h2>
-          <p className="text-sm text-slate-400">View transaction details and metadata.</p>
+          <p className="eyebrow">Record</p>
+          <h2 className="page-title">Record Detail</h2>
+          <p className="page-subtitle">View transaction details and metadata.</p>
         </div>
         <div className="flex gap-2">
           <Link href="/records">
@@ -45,27 +46,28 @@ export default async function RecordDetailPage({ params }: PageProps) {
 
       <Card className="space-y-4 p-5">
         <div className="flex items-center justify-between">
-          <p className="text-sm text-slate-300">Type</p>
+          <p className="text-sm text-[#5c6456]">Type</p>
           <Badge variant={record.type === "income" ? "success" : "danger"}>{record.type}</Badge>
         </div>
-        <div className="flex items-center justify-between border-t border-slate-800 pt-3">
-          <p className="text-sm text-slate-300">Category</p>
-          <p className="font-medium text-slate-100">{record.category}</p>
+        <div className="flex items-center justify-between border-t border-[#ecefe7] pt-3">
+          <p className="text-sm text-[#5c6456]">Category</p>
+          <p className="font-medium text-[#20261a]">{record.category}</p>
         </div>
-        <div className="flex items-center justify-between border-t border-slate-800 pt-3">
-          <p className="text-sm text-slate-300">Amount</p>
-          <p className="font-semibold text-indigo-200">{formatCurrency(record.amount)}</p>
+        <div className="flex items-center justify-between border-t border-[#ecefe7] pt-3">
+          <p className="text-sm text-[#5c6456]">Amount</p>
+          <p className="font-semibold text-[#2a60ac]">{formatCurrency(record.amount)}</p>
         </div>
-        <div className="flex items-center justify-between border-t border-slate-800 pt-3">
-          <p className="text-sm text-slate-300">Date</p>
-          <p className="text-slate-100">{formatDate(record.date)}</p>
+        <div className="flex items-center justify-between border-t border-[#ecefe7] pt-3">
+          <p className="text-sm text-[#5c6456]">Date</p>
+          <p className="text-[#20261a]">{formatDate(record.date)}</p>
         </div>
-        <div className="border-t border-slate-800 pt-3">
-          <p className="mb-2 text-sm text-slate-300">Notes</p>
-          <p className="rounded-xl bg-slate-950/60 p-3 text-sm text-slate-200">{record.notes || "-"}</p>
+        <div className="border-t border-[#ecefe7] pt-3">
+          <p className="mb-2 text-sm text-[#5c6456]">Notes</p>
+          <p className="rounded-xl border border-[#ecefe7] bg-[#f7f8f4] p-3 text-sm text-[#2f3728]">
+            {record.notes || "-"}
+          </p>
         </div>
       </Card>
     </div>
   );
 }
-

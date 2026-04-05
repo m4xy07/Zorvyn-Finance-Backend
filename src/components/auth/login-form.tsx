@@ -49,20 +49,20 @@ export function LoginForm() {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="w-full max-w-md rounded-2xl border border-indigo-400/20 bg-slate-900/70 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.5)] backdrop-blur"
+      transition={{ duration: 0.35 }}
+      className="w-full max-w-md rounded-3xl border border-[var(--border)] bg-white p-7 shadow-[0_1px_2px_rgba(17,24,39,0.06),0_40px_80px_-45px_rgba(17,24,39,0.35)]"
     >
       <div className="mb-6">
-        <p className="text-xs uppercase tracking-[0.16em] text-indigo-300/80">Zorvyn Finance</p>
-        <h1 className="mt-2 text-2xl font-semibold text-slate-100">Sign in to your workspace</h1>
-        <p className="mt-2 text-sm text-slate-400">Role-based access secured with JWT sessions.</p>
+        <p className="eyebrow">Zorvyn Finance</p>
+        <h1 className="mt-2 text-2xl font-semibold text-[#1b2117]">Sign in to continue</h1>
+        <p className="mt-2 text-sm text-[#66705f]">Secure workspace for role-based financial operations.</p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-slate-400">Email</label>
+          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Email</label>
           <Input
             type="email"
             value={email}
@@ -73,7 +73,7 @@ export function LoginForm() {
         </div>
 
         <div>
-          <label className="mb-2 block text-xs uppercase tracking-[0.14em] text-slate-400">Password</label>
+          <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-[#6d7567]">Password</label>
           <Input
             type="password"
             value={password}
@@ -97,4 +97,3 @@ export function LoginForm() {
     </motion.form>
   );
 }
-

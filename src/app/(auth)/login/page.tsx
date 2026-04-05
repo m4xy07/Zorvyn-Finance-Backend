@@ -5,9 +5,10 @@ export default async function LoginPage() {
   await redirectIfAuthenticated();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.18),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(79,70,229,0.12),transparent_45%),#020617] px-4">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
+      <div className="pointer-events-none absolute left-[-140px] top-[-120px] h-[360px] w-[360px] rounded-full bg-[#c8ddff]/45 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-180px] right-[-120px] h-[420px] w-[420px] rounded-full bg-[#d4eddc]/45 blur-3xl" />
       <LoginForm />
     </div>
   );
 }
-

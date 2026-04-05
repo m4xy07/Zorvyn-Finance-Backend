@@ -27,8 +27,9 @@ export default async function EditRecordPage({ params }: PageProps) {
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-xl font-semibold text-slate-100">Edit Record</h2>
-        <p className="text-sm text-slate-400">Update transaction details.</p>
+        <p className="eyebrow">Edit</p>
+        <h2 className="page-title">Edit Record</h2>
+        <p className="page-subtitle">Update transaction details.</p>
       </div>
 
       <RecordForm
@@ -45,4 +46,3 @@ export default async function EditRecordPage({ params }: PageProps) {
     </div>
   );
 }
-

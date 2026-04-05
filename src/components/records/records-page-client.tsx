@@ -78,10 +78,11 @@ export function RecordsPageClient({ role }: RecordsPageClientProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-xl font-semibold text-slate-100">Financial Records</h2>
-          <p className="text-sm text-slate-400">Filter, inspect, and manage transactions.</p>
+          <p className="eyebrow">Records</p>
+          <h2 className="page-title">Financial Records</h2>
+          <p className="page-subtitle">Filter, inspect, and manage transactions.</p>
         </div>
         {role === "admin" ? (
           <Link href="/records/new">
@@ -110,9 +111,9 @@ export function RecordsPageClient({ role }: RecordsPageClientProps) {
         <>
           <RecordsTable records={result.items} role={role} onDelete={handleDeleteFromState} />
 
-          <Card className="flex items-center justify-between py-3">
-            <p className="text-xs text-slate-400">
-              Page {result.page} of {result.totalPages} • {result.total} records
+          <Card className="flex flex-wrap items-center justify-between gap-3 py-3">
+            <p className="text-xs text-[#757d6e]">
+              Page {result.page} of {result.totalPages} � {result.total} records
             </p>
 
             <div className="flex gap-2">
@@ -135,10 +136,9 @@ export function RecordsPageClient({ role }: RecordsPageClientProps) {
         </>
       ) : (
         <Card>
-          <p className="text-sm text-rose-300">Unable to load records.</p>
+          <p className="text-sm text-[#af4343]">Unable to load records.</p>
         </Card>
       )}
     </div>
   );
 }
-

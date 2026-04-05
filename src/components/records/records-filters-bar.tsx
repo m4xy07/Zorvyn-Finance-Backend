@@ -32,7 +32,7 @@ export function RecordsFiltersBar({ value, onChange, onReset }: RecordsFiltersBa
     };
 
   return (
-    <div className="rounded-2xl border border-indigo-400/20 bg-slate-900/60 p-4">
+    <div className="rounded-2xl border border-[var(--border)] bg-white p-4 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
       <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
         <Input placeholder="Search category or notes" value={value.search} onChange={updateField("search")} />
 
@@ -59,11 +59,10 @@ export function RecordsFiltersBar({ value, onChange, onReset }: RecordsFiltersBa
           <option value="asc">Asc</option>
         </Select>
 
-        <Button variant="secondary" onClick={onReset}>
+        <Button variant="ghost" onClick={onReset}>
           Reset
         </Button>
       </div>
     </div>
   );
 }
-

@@ -51,10 +51,10 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
 
   return (
     <>
-      <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/50">
+      <div className="overflow-x-auto rounded-2xl border border-[var(--border)] bg-white shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
         <table className="w-full min-w-[760px] text-sm">
           <thead>
-            <tr className="border-b border-slate-800 text-left text-xs uppercase tracking-[0.14em] text-slate-400">
+            <tr className="border-b border-[#e8ebdf] text-left text-xs uppercase tracking-[0.12em] text-[#747d6e]">
               <th className="px-4 py-3">Date</th>
               <th className="px-4 py-3">Category</th>
               <th className="px-4 py-3">Type</th>
@@ -66,13 +66,13 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
           <tbody>
             {records.length === 0 ? (
               <tr>
-                <td colSpan={6} className="px-4 py-10 text-center text-slate-400">
+                <td colSpan={6} className="px-4 py-10 text-center text-[#798272]">
                   No records found for the current filters.
                 </td>
               </tr>
             ) : (
               records.map((record) => (
-                <tr key={record.id} className="border-b border-slate-800/70 text-slate-200">
+                <tr key={record.id} className="border-b border-[#edf0e8] text-[#262d21]">
                   <td className="px-4 py-3">{formatDate(record.date)}</td>
                   <td className="px-4 py-3">{record.category}</td>
                   <td className="px-4 py-3">
@@ -81,9 +81,7 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
                     </Badge>
                   </td>
                   <td className="px-4 py-3 text-right font-semibold">{formatCurrency(record.amount)}</td>
-                  <td className="max-w-[260px] truncate px-4 py-3 text-slate-300">
-                    {record.notes || "-"}
-                  </td>
+                  <td className="max-w-[260px] truncate px-4 py-3 text-[#5d6557]">{record.notes || "-"}</td>
                   <td className="px-4 py-3 text-right">
                     <div className="inline-flex gap-2">
                       <Link href={`/records/${record.id}`}>
@@ -128,4 +126,3 @@ export function RecordsTable({ records, role, onDelete }: RecordsTableProps) {
     </>
   );
 }
-

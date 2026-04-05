@@ -107,13 +107,19 @@ export function DashboardOverview({ role }: DashboardOverviewProps) {
   if (!summary) {
     return (
       <Card>
-        <p className="text-sm text-rose-300">Dashboard data could not be loaded.</p>
+        <p className="text-sm text-[#af4343]">Dashboard data could not be loaded.</p>
       </Card>
     );
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
+      <div>
+        <p className="eyebrow">Performance</p>
+        <h2 className="page-title">Financial Command Center</h2>
+        <p className="page-subtitle">Live operational health, trends, and spending signals.</p>
+      </div>
+
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard label="Total Income" value={summary.totals.income} tone="income" />
         <StatCard label="Total Expenses" value={summary.totals.expense} tone="expense" />
@@ -137,7 +143,7 @@ export function DashboardOverview({ role }: DashboardOverviewProps) {
 
       <div className="grid gap-4 xl:grid-cols-3">
         <div className="space-y-4 xl:col-span-2">
-          <div className="flex items-center justify-between rounded-2xl border border-indigo-400/20 bg-slate-900/60 p-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border)] bg-white p-3 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
             <div className="inline-flex gap-2">
               <Button
                 variant={period === "monthly" ? "primary" : "secondary"}
@@ -169,15 +175,15 @@ export function DashboardOverview({ role }: DashboardOverviewProps) {
           <CategoryChart data={categories.slice(0, 8)} />
 
           <Card>
-            <h3 className="mb-4 text-sm font-semibold text-slate-100">Top Categories</h3>
-            <div className="space-y-3">
+            <h3 className="mb-3 text-sm font-semibold text-[#1f241b]">Top Categories</h3>
+            <div className="space-y-2.5">
               {topCategories.length === 0 ? (
-                <p className="text-sm text-slate-400">No categories yet.</p>
+                <p className="text-sm text-[#747d6d]">No categories yet.</p>
               ) : (
                 topCategories.map((item) => (
                   <div key={item.category} className="flex items-center justify-between text-sm">
-                    <span className="text-slate-300">{item.category}</span>
-                    <span className="text-indigo-200">${item.volume.toLocaleString()}</span>
+                    <span className="text-[#4f5748]">{item.category}</span>
+                    <span className="font-medium text-[#2a60ac]">${item.volume.toLocaleString()}</span>
                   </div>
                 ))
               )}
@@ -190,4 +196,3 @@ export function DashboardOverview({ role }: DashboardOverviewProps) {
     </div>
   );
 }
-
