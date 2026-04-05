@@ -9,13 +9,13 @@ interface RecentActivityFeedProps {
 
 export function RecentActivityFeed({ records }: RecentActivityFeedProps) {
   return (
-    <Card className="h-[390px]">
+    <Card className="flex h-[390px] flex-col overflow-hidden">
       <div className="mb-3 flex items-center justify-between">
         <h3 className="text-sm font-semibold text-[var(--text)]">Recent Activity</h3>
         <Badge variant="neutral">This Week</Badge>
       </div>
 
-      <div className="space-y-2">
+      <div className="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1">
         {records.length === 0 ? (
           <p className="text-sm text-[var(--muted)]">No recent records.</p>
         ) : (
